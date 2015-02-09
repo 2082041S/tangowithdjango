@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Rango</title>
-    </head>
+{% extends 'rango/base.html' %}
 
-    <body>
-        <h1>Rango says..hello world!</h1>
+{% load staticfiles %}
+
+{% block title %}Rango{% endblock %}
+
+{% block body_block %}
+        {% if user.is_authenticated %}
+		<h1>Rango says... hello {{ user.username }}!</h1>
+		{% else %}
+		<h1>Rango says... hello world!</h1>
+		{% endif %}
 
         {% if categories %}
             <ul>
                 {% for category in categories %}
                 <!-- Following line changed to add an HTML hyperlink -->
-                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+                <li><a href="{% url 'category'  category.slug %}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
        {% else %}
             <strong>There are no categories present.</strong>
        {% endif %}
-	   <a href="/rango/about/">About</a><br />
 	   <br/>
 	   Pages:
 	   {% if pages %}
@@ -29,6 +32,4 @@
        {% else %}
             <strong>no pages</strong>
        {% endif %}
-
-    </body>
-</html>
+ {% endblock %}
