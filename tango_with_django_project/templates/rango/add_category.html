@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
+
 
 {% block title %}Rango{% endblock %}
 
 {% block body_block %}
-        <h1>Add a Category</h1>
+		<form role="form"  id="page_form" method="post" action="/rango/category/{{category.slug}}/add_category/">
+        <h2 class="form-signin-heading">Add a Categaroy to <a href="/rango/category/{{category.slug}}/"> {{ category.name }}</a></h2>
 		{% if user.is_authenticated %}
         <form id="category_form" method="post" action="/rango/add_category/">
 
@@ -24,5 +25,6 @@
 			{% else %}
 			You must  be registers to access this!
 			{% endif %}
+		<button class="btn btn-primary" type="submit" name="submit">Add Category</button>
         </form>
 {% endblock %}
