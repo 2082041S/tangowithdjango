@@ -1,4 +1,4 @@
-{% extends 'rango/base.html' %}
+{% extends 'base.html' %}
 
 {% load staticfiles %}
 
@@ -32,4 +32,5 @@
        {% else %}
             <strong>no pages</strong>
        {% endif %}
+	   <p> visits: {{ visits }}</p>
  {% endblock %}

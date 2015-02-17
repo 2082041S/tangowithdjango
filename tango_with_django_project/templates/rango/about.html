@@ -1,4 +1,4 @@
-{% extends 'rango/base.html' %}
+{% extends 'base.html' %}
 
 {% load staticfiles %}
 
@@ -7,4 +7,5 @@
 {% block body_block %}
 		<img src="{% static "images/picture.png" %}" alt="Picture of Me" /> <!-- New line -->
 		<br/>Petre Stegaroiu 2082041S
+		<p> visits: {{ visits }}</p>
 {% endblock %}
