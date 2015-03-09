@@ -6,7 +6,7 @@
 
 {% block body_block %}
 		<form role="form"  id="page_form" method="post" action="/rango/category/{{category.slug}}/add_category/">
-        <h2 class="form-signin-heading">Add a Categaroy to <a href="/rango/category/{{category.slug}}/"> {{ category.name }}</a></h2>
+        <h2 class="form-signin-heading">Add a Category to <a href="/rango/category/{{category.slug}}/"> {{ category.name }}</a></h2>
 		{% if user.is_authenticated %}
         <form id="category_form" method="post" action="/rango/add_category/">
 
@@ -21,7 +21,6 @@
                 {{ field }}
             {% endfor %}
 
-            <input type="submit" name="submit" value="Create Category" />
 			{% else %}
 			You must  be registers to access this!
 			{% endif %}
