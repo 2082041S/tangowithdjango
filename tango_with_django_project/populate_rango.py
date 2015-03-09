@@ -54,7 +54,7 @@ def populate():
 
     add_page(cat=student,
              title="Pythonanywhere",
-             url="https://Steghi.pythonanywhere.com")
+             url="https://2082041S.pythonanywhere.com")
 
     # Print out what we have added to the user.
     for c in Category.objects.all():
